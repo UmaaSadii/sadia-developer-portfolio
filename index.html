@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sadia Naz — React-focused Full Stack Developer building useful digital products.">
+<title>Sadia Naz — Developer / Builder</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{--bg:#07151d;--panel:#0c202b;--panel2:#102a36;--ink:#edf7f5;--muted:#9bb0b5;--line:#1c3944;--mint:#79f2cb;--cyan:#67dbe7;--lime:#c6f36b;--white:#fff;--mono:"DM Mono",monospace;--sans:"Manrope",sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;background:linear-gradient(rgba(103,219,231,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(103,219,231,.035) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,#000,transparent 92%)}
+#spotlight{position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(500px circle at var(--mx,70%) var(--my,20%),rgba(103,219,231,.075),transparent 58%)}
+a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(1160px,90%);margin:auto}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(7,21,29,.82);backdrop-filter:blur(18px);border-bottom:1px solid #ffffff0d}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}.logo{font-size:1.1rem;font-weight:800;letter-spacing:-.06em}.logo span{color:var(--mint)}.navlinks{display:flex;gap:26px;color:var(--muted);font-size:.82rem}.navlinks a:hover{color:var(--mint)}.nav-cta{font:500 .75rem var(--mono);color:var(--mint);border:1px solid #79f2cb55;padding:10px 14px;border-radius:5px}
+.hero{min-height:calc(100vh - 76px);display:grid;align-items:center;padding:76px 0 88px;position:relative}.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:55px;align-items:center}
+.micro{font:500 .72rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mint);display:flex;align-items:center;gap:10px}.micro:before{content:"";width:25px;height:1px;background:var(--mint)}
+h1{font-size:clamp(3.2rem,7.8vw,6.8rem);line-height:.99;letter-spacing:-.085em;margin:22px 0 25px;font-weight:800}h1 .outline{color:transparent;-webkit-text-stroke:1px #a8c6c7}h1 .accent{color:var(--mint)}
+.hero-copy{max-width:650px;color:var(--muted);font-size:1.04rem}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}.btn{border:1px solid var(--mint);background:var(--mint);color:#09202a;padding:13px 18px;border-radius:5px;font-weight:800;font-size:.82rem;display:inline-flex;align-items:center;gap:12px;cursor:pointer;transition:.25s}.btn:hover{transform:translateY(-3px);box-shadow:0 12px 35px #79f2cb25}.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}.btn.ghost:hover{border-color:var(--mint);color:var(--mint)}
+.hero-foot{display:flex;gap:22px;flex-wrap:wrap;margin-top:42px;font: .7rem var(--mono);color:#789097}.hero-foot span{display:flex;align-items:center;gap:8px}.pulse{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 5px #c6f36b18;animation:pulse 1.8s infinite}@keyframes pulse{50%{box-shadow:0 0 0 9px #c6f36b00}}
+.console-wrap{position:relative}.orbit{position:absolute;width:360px;height:360px;border:1px solid #67dbe71c;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);animation:spin 32s linear infinite}.orbit:before,.orbit:after{content:"";position:absolute;width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 20px var(--mint)}.orbit:before{top:44px;left:46px}.orbit:after{bottom:55px;right:20px;background:var(--cyan)}@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.console{position:relative;background:linear-gradient(145deg,#102a36,#091a23);border:1px solid #2b4b56;border-radius:12px;box-shadow:0 35px 100px #0008;overflow:hidden;transform:perspective(900px) rotateY(-5deg) rotateX(2deg);transition:transform .4s}.console:hover{transform:perspective(900px) rotateY(0) rotateX(0) translateY(-4px)}
+.console-head{display:flex;align-items:center;gap:7px;padding:14px 17px;border-bottom:1px solid var(--line);font: .68rem var(--mono);color:#89a3a9}.window-dot{width:8px;height:8px;border-radius:50%;background:#45616a}.window-dot:first-child{background:#f28d79}.window-dot:nth-child(2){background:#e8c56c}.window-dot:nth-child(3){background:#79cda8}.console-title{margin-left:auto}
+.console-body{padding:25px 24px 27px;font: .78rem/2 var(--mono);min-height:290px}.code-muted{color:#68858d}.code-green{color:var(--mint)}.code-blue{color:var(--cyan)}.code-lime{color:var(--lime)}.type-line{min-height:25px}.caret{display:inline-block;width:7px;height:15px;background:var(--mint);vertical-align:middle;animation:blink .8s steps(2) infinite}@keyframes blink{50%{opacity:0}}
+.console-bottom{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:12px 18px;font: .65rem var(--mono);color:#77939b}
+.scroll-cue{position:absolute;bottom:25px;left:50%;transform:translateX(-50%);font: .65rem var(--mono);color:#77939b;letter-spacing:.12em}.scroll-cue b{display:block;text-align:center;color:var(--mint);font-size:1rem;animation:bob 1.5s infinite}@keyframes bob{50%{transform:translateY(5px)}}
+section{padding:105px 0;border-top:1px solid #ffffff0d;scroll-margin-top:76px}.section-top{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:40px}.eyebrow{font: .68rem var(--mono);color:var(--mint);letter-spacing:.14em;text-transform:uppercase}.section-title{font-size:clamp(2.2rem,5vw,4rem);letter-spacing:-.075em;line-height:1.05;margin:10px 0 0}.section-note{max-width:390px;color:var(--muted);font-size:.9rem;margin:0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:start}.about-text{font-size:1rem;color:#afc2c5}.about-text strong{color:var(--ink)}.about-aside{border-left:1px solid var(--mint);padding:5px 0 5px 24px;color:var(--muted);font: .78rem/2 var(--mono)}.about-aside b{color:var(--mint);font-weight:500}
+.fact-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}.fact{background:#0c202b;border:1px solid var(--line);padding:18px;border-radius:7px}.fact strong{display:block;color:var(--mint);font-size:1.7rem;letter-spacing:-.06em}.fact small{font: .65rem var(--mono);color:#8ca4a9}
+.skill-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:transparent;color:var(--muted);padding:10px 15px;border-radius:4px;cursor:pointer;font: .7rem var(--mono);transition:.2s}.tab.active,.tab:hover{color:var(--bg);background:var(--mint);border-color:var(--mint)}
+.skill-panel{min-height:180px;border:1px solid var(--line);background:linear-gradient(120deg,#0c202b,#0a1b24);border-radius:8px;padding:27px;display:flex;align-items:center;gap:30px}.skill-panel h3{font-size:1.3rem;margin:0 0 7px}.skill-panel p{color:var(--muted);margin:0;max-width:360px;font-size:.85rem}.skill-list{display:flex;flex-wrap:wrap;gap:9px;margin-left:auto;max-width:430px}.skill-chip{padding:9px 12px;border:1px solid #2b4b56;color:#c6d9d9;border-radius:4px;font: .72rem var(--mono);background:#102a36}
+.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{background:transparent;color:#8ea5aa;border:1px solid var(--line);padding:8px 12px;border-radius:4px;font: .68rem var(--mono);cursor:pointer}.filter.active,.filter:hover{border-color:var(--cyan);color:var(--cyan)}
+.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.project{position:relative;background:#0b1e28;border:1px solid var(--line);border-radius:8px;padding:25px;min-height:275px;overflow:hidden;transition:.3s}.project:before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-100px;top:-100px;background:var(--glow,#79f2cb);opacity:.08;filter:blur(25px);transition:.3s}.project:hover{transform:translateY(-6px);border-color:#4c7a80;box-shadow:0 20px 55px #0004}.project:hover:before{opacity:.22}.project[hidden]{display:none}
+.project-meta{display:flex;justify-content:space-between;font: .65rem var(--mono);color:#8ca4a9}.project-index{color:var(--mint)}.project h3{font-size:1.5rem;letter-spacing:-.05em;margin:23px 0 8px}.project p{font-size:.85rem;color:var(--muted);max-width:480px;margin:0 0 18px}.tags{display:flex;gap:7px;flex-wrap:wrap}.tags span{font: .62rem var(--mono);color:#9eb8bd;border:1px solid #25434e;padding:5px 8px;border-radius:3px}.project-open{margin-top:20px;background:none;border:0;color:var(--mint);font: .7rem var(--mono);padding:0;cursor:pointer}.project-open:hover{color:var(--lime)}
+.modal{position:fixed;inset:0;z-index:50;background:#02090dc9;display:none;place-items:center;padding:20px;backdrop-filter:blur(9px)}.modal.show{display:grid}.modal-card{width:min(600px,100%);background:#0c202b;border:1px solid #3b626d;border-radius:10px;padding:30px;position:relative;animation:pop .25s ease}.modal-card h3{font-size:2rem;letter-spacing:-.06em;margin:8px 0}.modal-card p{color:var(--muted)}.modal-close{position:absolute;right:17px;top:15px;background:none;border:1px solid var(--line);color:var(--ink);border-radius:4px;padding:5px 9px;cursor:pointer}@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+.path-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.path{padding:20px;background:#0c202b;border:1px solid var(--line);border-radius:7px}.path .n{font: .68rem var(--mono);color:var(--mint)}.path h3{margin:15px 0 5px;font-size:1rem}.path p{color:var(--muted);font-size:.8rem;margin:0}
+.experience{display:grid;grid-template-columns:1fr 1fr;gap:14px}.exp{padding:22px 0;border-top:1px solid var(--line)}.exp .when{font: .67rem var(--mono);color:var(--mint)}.exp h3{margin:8px 0 4px;font-size:1.05rem}.exp p{margin:0;color:var(--muted);font-size:.82rem}
+.education{display:grid;grid-template-columns:1fr 1fr;gap:18px}.edu-card{padding:22px;border:1px solid var(--line);background:#0c202b;border-radius:7px}.edu-card h3{margin:0 0 5px}.edu-card p{color:var(--muted);margin:0;font-size:.82rem}.edu-card .year{font: .68rem var(--mono);color:var(--mint)}
+.contact-box{border:1px solid #31535d;border-radius:10px;padding:clamp(25px,5vw,55px);background:radial-gradient(500px circle at 100% 0%,#17404a 0,transparent 65%),#0c202b;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}.contact-box h2{font-size:clamp(2.3rem,5vw,4.4rem);letter-spacing:-.08em;line-height:1;margin:12px 0}.contact-box p{color:var(--muted);max-width:550px}.contact-actions{display:flex;flex-direction:column;gap:10px;min-width:175px}.contact-actions a,.contact-actions button{display:flex;justify-content:center;align-items:center;gap:9px;padding:12px;border:1px solid var(--line);border-radius:4px;background:transparent;color:var(--ink);font: .72rem var(--mono);cursor:pointer}.contact-actions a:hover,.contact-actions button:hover{border-color:var(--mint);color:var(--mint)}
+footer{padding:25px 0;color:#718a91;font: .65rem var(--mono);display:flex;justify-content:space-between;gap:15px}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1);will-change:opacity,transform}
+.reveal.visible{opacity:1;transform:none}
+.reveal .project,.reveal .exp,.reveal .edu-card,.reveal .path,.reveal .fact{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.reveal.visible .project,.reveal.visible .exp,.reveal.visible .edu-card,.reveal.visible .path,.reveal.visible .fact{opacity:1;transform:none}
+.reveal.visible .project:nth-child(2),.reveal.visible .exp:nth-child(2),.reveal.visible .edu-card:nth-child(2),.reveal.visible .path:nth-child(2),.reveal.visible .fact:nth-child(2){transition-delay:.08s}
+.reveal.visible .project:nth-child(3),.reveal.visible .exp:nth-child(3),.reveal.visible .edu-card:nth-child(3),.reveal.visible .path:nth-child(3),.reveal.visible .fact:nth-child(3){transition-delay:.16s}
+.reveal.visible .project:nth-child(4),.reveal.visible .exp:nth-child(4),.reveal.visible .path:nth-child(4){transition-delay:.24s}
+.scroll-progress{position:fixed;top:0;left:0;width:0;height:3px;background:linear-gradient(90deg,var(--mint),var(--cyan),var(--lime));z-index:100;box-shadow:0 0 14px #79f2cb66}
+.back-to-top{position:fixed;right:24px;bottom:24px;width:44px;height:44px;border:1px solid #79f2cb66;border-radius:50%;background:#0c202beF;color:var(--mint);font-size:1.25rem;cursor:pointer;z-index:30;opacity:0;visibility:hidden;transform:translateY(10px);transition:.25s}
+.back-to-top.show{opacity:1;visibility:visible;transform:none}.back-to-top:hover{background:var(--mint);color:var(--bg);transform:translateY(-3px)}
+@media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:60px}.console-wrap{max-width:560px}.hero{padding-top:65px}.about-grid{grid-template-columns:1fr;gap:25px}.skill-panel{align-items:flex-start;flex-direction:column}.skill-list{margin-left:0}.contact-box{grid-template-columns:1fr}.contact-actions{flex-direction:row;flex-wrap:wrap}.contact-actions>*{flex:1}}
+@media(max-width:600px){.back-to-top{right:14px;bottom:14px}.navlinks{display:none}.hero{min-height:auto;padding:70px 0 85px}h1{font-size:clamp(3rem,15vw,5rem)}.orbit{width:290px;height:290px}.console-body{padding:20px 16px;font-size:.68rem;min-height:260px}.section-top{display:block}.section-note{margin-top:14px}.project-grid,.path-grid,.experience,.education{grid-template-columns:1fr}.fact-row{gap:7px}.fact{padding:12px}.fact strong{font-size:1.35rem}.fact small{font-size:.57rem}.contact-actions{flex-direction:column}footer{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+
+/* Recruiter-first refinement */
+.section-title{font-size:clamp(2.2rem,4.2vw,3.7rem);letter-spacing:-.055em;line-height:1.05}
+.section-top{align-items:end;margin-bottom:34px}
+.section-note{max-width:360px;font-size:.98rem;line-height:1.65}
+.about-grid{grid-template-columns:minmax(0,1.5fr) minmax(250px,.8fr);gap:56px}
+.about-text p{font-size:1.08rem;line-height:1.72;margin:0 0 16px}
+.about-aside{border-left:1px solid var(--mint);padding:8px 0 8px 26px;display:flex;flex-direction:column;gap:18px;font-family:inherit}
+.about-aside div{display:flex;flex-direction:column;gap:5px}
+.about-aside b{font:600 .7rem/1.4 var(--mono);letter-spacing:.09em;color:var(--mint)}
+.about-aside span{font-size:.98rem;line-height:1.45;color:var(--text)}
+.skills-overview{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.skill-group{padding:20px 22px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.018)}
+.skill-group h3{font-size:1.02rem;margin:0 0 9px;color:var(--mint)}
+.skill-group p{margin:0;color:var(--muted);font-size:.95rem;line-height:1.7}
+.project,.exp,.edu-card{border-radius:12px}
+.project-open{letter-spacing:.02em}
+.path-grid{display:none}
+.reveal{transform:translateY(12px);transition:opacity .45s ease,transform .45s ease}
+.reveal .project,.reveal .exp,.reveal .edu-card{transform:translateY(8px)}
+.scroll-progress{height:2px;box-shadow:none}
+#spotlight{opacity:.25}
+@media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:25px}.about-aside{border-left:0;border-top:1px solid var(--line);padding:20px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.skills-overview{grid-template-columns:1fr}.section-top{align-items:start;gap:12px}}
+
+</style>
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<div id="spotlight"></div>
+<header class="topbar"><div class="wrap nav">
+<a class="logo" href="#home">sadia<span>_naz</span><span style="color:#edf7f5">.</span></a>
+<nav class="navlinks"><a href="#about">About</a><a href="#skills">Toolkit</a><a href="#work">Work</a><a href="#journey">Journey</a><a href="#approach">Approach</a></nav>
+<a class="nav-cta" href="#contact">LET'S TALK ↗</a>
+</div></header>
+
+<main id="home">
+<section class="hero" style="border:0">
+<div class="wrap hero-grid">
+<div>
+<div class="micro">Developer portfolio / 2026</div>
+<h1>Ideas into<br><span class="outline">interfaces.</span><br><span class="accent">Impact into</span><br>products<span class="accent">.</span></h1>
+<p class="hero-copy">I'm <strong style="color:var(--ink)">Sadia Naz</strong> — a React-focused Full Stack Developer who enjoys turning complex requirements into clear, useful digital experiences. I work across the interface, the API and the data behind it.</p>
+<div class="hero-actions"><a class="btn" href="#work">Explore selected work <span>↘</span></a><a class="btn ghost" href="#contact">Get in touch <span>↗</span></a></div>
+<div class="hero-foot"><span><i class="pulse"></i> OPEN TO OPPORTUNITIES</span><span>WAH CANTT · PAKISTAN</span><span>FRONTEND / FULL STACK</span></div>
+</div>
+<div class="console-wrap">
+<div class="orbit"></div>
+<div class="console">
+<div class="console-head"><i class="window-dot"></i><i class="window-dot"></i><i class="window-dot"></i><span class="console-title">sadia@workspace: ~/profile</span></div>
+<div class="console-body">
+<div class="code-muted">/* A little introduction */</div>
+<div><span class="code-blue">const</span> developer = {</div>
+<div>&nbsp;&nbsp;name: <span class="code-green">"Sadia Naz"</span>,</div>
+<div>&nbsp;&nbsp;degree: <span class="code-green">"BS Information Technology"</span>,</div>
+<div>&nbsp;&nbsp;focus: [<span class="code-green">"React"</span>, <span class="code-green">"TypeScript"</span>],</div>
+<div>&nbsp;&nbsp;backend: [<span class="code-green">"Python"</span>, <span class="code-green">"Django REST"</span>],</div>
+<div>&nbsp;&nbsp;database: <span class="code-green">"PostgreSQL"</span>,</div>
+<div>&nbsp;&nbsp;mindset: <span class="code-lime">"Build. Learn. Improve."</span></div>
+<div>};</div>
+<br><div class="code-muted">// currently looking for the next challenge</div>
+<div class="type-line"><span class="code-blue">developer.status</span> = <span class="code-green" id="typed">"ready_to_build"</span><span class="caret"></span></div>
+</div>
+<div class="console-bottom"><span>UTF-8</span><span>JS / TS / PY</span><span>● ALL SYSTEMS GO</span></div>
+</div>
+</div>
+</div>
+<div class="scroll-cue">SCROLL TO EXPLORE <b>↓</b></div>
+</section>
+
+<section id="about"><div class="wrap reveal">
+<div class="section-top"><div><div class="eyebrow">01 / PROFILE</div><h2 class="section-title">About me</h2></div><p class="section-note">Frontend-focused developer with full-stack project experience.</p></div>
+<div class="about-grid">
+<div class="about-text">
+<p>I’m a <strong>BS Information Technology graduate (2022–2026)</strong> from the University of the Punjab, based in Wah Cantt. I build responsive web applications using <strong>React.js, TypeScript, JavaScript, Python, Django REST Framework and PostgreSQL</strong>.</p>
+<p>My final-year project, the <strong>OBE Academic System</strong>, was developed for F.G. Post Graduate College for Women, Wah Cantt. It supports curriculum management, course allocation, CLO/GA mapping, assessments, marks, student feedback, results and OBE reports.</p>
+<p>I’m seeking a <strong>Junior Frontend / React.js Developer</strong> role, and I’m also open to entry-level Full Stack opportunities in Islamabad, Rawalpindi or remote teams.</p>
+</div>
+<aside class="about-aside">
+<div><b>LOCATION</b><span>Wah Cantt, Pakistan</span></div>
+<div><b>ROLE</b><span>Junior React.js / Frontend Developer</span></div>
+<div><b>EDUCATION</b><span>BS Information Technology</span></div>
+<div><b>AVAILABILITY</b><span>On-site · Hybrid · Remote</span></div>
+</aside>
+</div>
+</div></section>
+
+<section id="skills"><div class="wrap reveal">
+<div class="section-top"><div><div class="eyebrow">02 / TECHNICAL SKILLS</div><h2 class="section-title">Technical skills</h2></div><p class="section-note">Technologies and tools used across my projects and development work.</p></div>
+<div class="skills-overview">
+<div class="skill-group"><h3>Frontend</h3><p>React.js · TypeScript · JavaScript · HTML5 · CSS3 · Tailwind CSS · Material UI</p></div>
+<div class="skill-group"><h3>Backend</h3><p>Python · Django · Django REST Framework · REST API Integration</p></div>
+<div class="skill-group"><h3>Database</h3><p>PostgreSQL · Relational Database Design · SQL</p></div>
+<div class="skill-group"><h3>Tools</h3><p>Git · GitHub · Docker · Postman · VS Code</p></div>
+</div></section>
+
+<section id="work"><div class="wrap reveal">
+<div class="section-top"><div><div class="eyebrow">03 / PROJECTS</div><h2 class="section-title">Selected projects</h2></div><div class="filters" aria-label="Filter projects"><button class="filter active" data-filter="all">ALL PROJECTS</button><button class="filter" data-filter="web">WEB APPLICATIONS</button><button class="filter" data-filter="product">PRODUCT</button><button class="filter" data-filter="community">COMMUNITY</button></div></div>
+<div class="project-grid">
+<article class="project" data-category="web" style="--glow:#79f2cb">
+<div class="project-meta"><span class="project-index">01 / ACADEMIC PLATFORM</span><span>FEATURED</span></div><h3>OBE Academic System</h3><p>A full academic workflow platform designed for real college use — from curriculum and course allocation to assessments, results, feedback and OBE reporting.</p><div class="tags"><span>REACT</span><span>TYPESCRIPT</span><span>DJANGO REST</span><span>POSTGRESQL</span></div><button class="project-open" data-project="obe">VIEW PROJECT DETAILS ↗</button>
+</article>
+<article class="project" data-category="product" style="--glow:#67dbe7">
+<div class="project-meta"><span class="project-index">02 / E-COMMERCE</span><span>FULL STACK</span></div><h3>ZR Fragnance</h3><p>A perfume shopping experience concept with customer and admin panels, product and sale presentation, COD flow and free-delivery threshold logic.</p><div class="tags"><span>REACT</span><span>PYTHON</span><span>POSTGRESQL</span><span>COMMERCE</span></div><button class="project-open" data-project="zr">VIEW PROJECT DETAILS ↗</button>
+</article>
+<article class="project" data-category="community" style="--glow:#c6f36b">
+<div class="project-meta"><span class="project-index">03 / LEARNING BRAND</span><span>CONTENT</span></div><h3>TechSisters</h3><p>A developer-learning initiative sharing Python concepts and practical programming lessons through short-form content and a structured challenge.</p><div class="tags"><span>PYTHON</span><span>EDUCATION</span><span>CONTENT DESIGN</span></div><button class="project-open" data-project="tech">VIEW PROJECT DETAILS ↗</button>
+</article>
+<article class="project" data-category="web">
+<div class="project-meta"><span class="project-index">04 / ENTERPRISE EXPOSURE</span><span>INTERNSHIP</span></div><h3>POF Modernization</h3><p>Internship exposure to document and workflow modernization, Python/Django processes and enterprise tools including Alfresco, Docker and OnlyOffice.</p><div class="tags"><span>PYTHON</span><span>DJANGO</span><span>DOCKER</span><span>ALFRESCO</span></div><button class="project-open" data-project="pof">VIEW PROJECT DETAILS ↗</button>
+</article>
+</div>
+</div></section>
+
+<section id="journey"><div class="wrap reveal">
+<div class="section-top"><div><div class="eyebrow">04 / EXPERIENCE</div><h2 class="section-title">Professional experience</h2></div><p class="section-note">Internship, customer communication and teaching experience.</p></div>
+<div class="experience">
+<div class="exp"><div class="when">INTERNSHIP · ENTERPRISE</div><h3>Pakistan Ordnance Factories (POF)</h3><p>Contributed to modernization-related work and gained exposure to Python/Django document workflows, Alfresco, Docker and OnlyOffice.</p></div>
+<div class="exp"><div class="when">INTERNSHIP · PROFESSIONAL</div><h3>Maalik Creative Engineers</h3><p>Built professional workplace experience, collaborated with a team and strengthened my understanding of day-to-day project coordination.</p></div>
+<div class="exp"><div class="when">6 MONTHS · CUSTOMER COMMUNICATION</div><h3>Chat Sales Representative</h3><p>Handled customer conversations through chat, responded to queries, supported client coordination and developed a clear, solution-oriented communication style.</p></div>
+<div class="exp"><div class="when">6 MONTHS · EDUCATION</div><h3>Teaching Experience</h3><p>Explained concepts in a learner-friendly way, adapted communication to different needs and developed confidence in guiding and supporting students.</p></div>
+</div>
+<div style="margin-top:55px"><div class="eyebrow">EDUCATION & COURSES</div><div class="education" style="margin-top:16px">
+<div class="edu-card"><div class="year">2022 — 2026</div><h3>BS Information Technology</h3><p>University of the Punjab · F.G. Post Graduate College for Women, Wah Cantt</p></div>
+<div class="edu-card"><div class="year">CERTIFICATION</div><h3>Career Counseling</h3><p>Professional development certification</p></div>
+<div class="edu-card"><div class="year">COURSEWORK</div><h3>Graphic Design</h3><p>Visual composition, typography, colour theory and layout fundamentals</p></div>
+</div></div>
+</div></section>
+
+
+<section id="contact"><div class="wrap reveal"><div class="contact-box">
+<div><div class="eyebrow">05 / CONTACT</div><h2>Contact</h2><p>I’m looking for an opportunity to contribute as a Junior React.js Developer, Frontend Developer or entry-level Full Stack Developer. I value teams that encourage thoughtful problem-solving, clean implementation, collaboration and continuous improvement.</p><div class="hero-foot"><span>ISLAMABAD / RAWALPINDI</span><span>REMOTE OPPORTUNITIES</span></div></div>
+<div class="contact-actions"><a href="mailto:itx.sadi234@gmail.com">✉ EMAIL ME ↗</a><a href="https://www.linkedin.com/in/sadianaz234/" target="_blank" rel="noreferrer">LINKEDIN ↗</a><a href="tel:+923195213279">☎ 0319 5213279</a><a href="https://github.com/UmaaSadii" target="_blank" rel="noreferrer">GITHUB ↗</a><button id="copyEmail" type="button">COPY EMAIL</button></div>
+</div></div></section>
+</main>
+<footer class="wrap"><span>© 2026 SADIA NAZ · BUILT WITH INTENTION</span><span>DESIGN / DEVELOP / ITERATE</span></footer>
+<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+
+<div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+<div class="modal-card"><button class="modal-close" id="modalClose" aria-label="Close">✕</button><div class="eyebrow" id="modalEyebrow">CASE FILE</div><h3 id="modalTitle">Project title</h3><p id="modalDesc"></p><div class="tags" id="modalTags"></div></div>
+</div>
+
+<script>
+const $=(s,root=document)=>root.querySelector(s), $$=(s,root=document)=>[...root.querySelectorAll(s)];
+// Pointer-following ambient light: decorative only, disabled on touch devices.
+if(matchMedia('(pointer:fine)').matches){document.addEventListener('pointermove',e=>{document.documentElement.style.setProperty('--mx',e.clientX+'px');document.documentElement.style.setProperty('--my',e.clientY+'px')})}
+// Animated console status types through a few short states.
+const phrases=['"ready_to_build"','"learning_every_day"','"open_to_opportunities"'];let pi=0;
+setInterval(()=>{const el=$('#typed');if(!el)return;pi=(pi+1)%phrases.length;el.textContent=phrases[pi]},2600);
+// Count-up only once when the facts enter view; always ends at exact value.
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const countObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(!entry.isIntersecting)return;const el=entry.target;countObserver.unobserve(el);const target=Number(el.dataset.target),suffix=el.dataset.suffix||'';if(reduced){el.textContent=target+suffix;return}const start=performance.now(),duration=1250;function tick(now){const p=Math.min((now-start)/duration,1),ease=1-Math.pow(1-p,4);el.textContent=Math.round(target*ease)+(p===1?suffix:'');if(p<1)requestAnimationFrame(tick);else el.textContent=target+suffix}requestAnimationFrame(tick)}),{threshold:.65});
+$$('.count').forEach(el=>countObserver.observe(el));
+// Reveal sections/cards on scroll.
+// Reveal every content section when it enters the viewport.
+if(reduced || !('IntersectionObserver' in window)){
+  $$('.reveal').forEach(el=>el.classList.add('visible'));
+}else{
+  const revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('visible');revealObserver.unobserve(e.target)}
+  }),{threshold:0.08,rootMargin:'0px 0px -35px 0px'});
+  $$('.reveal').forEach(el=>revealObserver.observe(el));
+}
+// Reading progress and quick return to the top.
+const progress=$('#scrollProgress'),topButton=$('#backToTop');
+function updateScrollUI(){
+  const max=document.documentElement.scrollHeight-window.innerHeight;
+  const percent=max>0?(window.scrollY/max)*100:0;
+  progress.style.width=percent+'%';
+  topButton.classList.toggle('show',window.scrollY>500);
+}
+window.addEventListener('scroll',updateScrollUI,{passive:true});
+updateScrollUI();
+topButton.addEventListener('click',()=>window.scrollTo({top:0,behavior:reduced?'auto':'smooth'}));
+// Interactive skill tabs.
+const skillData={
+ frontend:{k:'INTERFACE ENGINEERING',t:'Frontend development',d:'Building responsive, reusable interfaces with a focus on clarity, usability and consistency.',s:['React.js','TypeScript','JavaScript','HTML5','CSS3','Tailwind CSS','Material UI']},
+ backend:{k:'APPLICATION LOGIC',t:'Backend development',d:'Creating API-driven application workflows and connecting frontend experiences to server-side logic.',s:['Python','Django','Django REST Framework','REST APIs']},
+ data:{k:'DATA & PERSISTENCE',t:'Database foundations',d:'Working with relational data structures and PostgreSQL-backed application workflows.',s:['PostgreSQL','Relational modelling','CRUD workflows','Data relationships']},
+ workflow:{k:'BUILD & COLLABORATE',t:'Development workflow',d:'Using everyday engineering tools to manage code, test APIs and support consistent development.',s:['Git','GitHub','Docker','Postman']}
+};
+$$('.tab').forEach(btn=>btn.addEventListener('click',()=>{ $$('.tab').forEach(b=>b.classList.toggle('active',b===btn));const x=skillData[btn.dataset.skill];$('#skill-kicker').textContent=x.k;$('#skill-title').textContent=x.t;$('#skill-desc').textContent=x.d;$('#skill-list').innerHTML=x.s.map(v=>`<span class="skill-chip">${v}</span>`).join('') }));
+// Project filters.
+$$('.filter').forEach(btn=>btn.addEventListener('click',()=>{$$('.filter').forEach(b=>b.classList.toggle('active',b===btn));$$('.project').forEach(card=>card.hidden=btn.dataset.filter!=='all'&&card.dataset.category!==btn.dataset.filter)}));
+// Case-file modal with project-specific detail.
+const projectData={
+ obe:{eyebrow:'01 / ACADEMIC PLATFORM',title:'OBE Academic System',desc:'Developed for F.G. Post Graduate College for Women, Wah Cantt. The platform brings together program and curriculum structures, course allocation, CLO and GA mapping, assessments, marks, student feedback, results and outcome-based reporting. This project demonstrates end-to-end thinking across React/TypeScript interfaces, Django REST APIs and PostgreSQL data workflows.',tags:['React','TypeScript','Django REST Framework','PostgreSQL','Tailwind CSS','MUI']},
+ zr:{eyebrow:'02 / E-COMMERCE',title:'ZR Fragnance',desc:'A perfume e-commerce project with customer and admin experiences, product and sale presentation, cash-on-delivery flow and a free-delivery threshold. Built around a PostgreSQL-backed store workflow.',tags:['React','Python','PostgreSQL','E-commerce']},
+ tech:{eyebrow:'03 / LEARNING BRAND',title:'TechSisters',desc:'A developer-learning initiative focused on making programming concepts approachable through short-form Python lessons, practical examples and a structured learning challenge.',tags:['Python','Technical content','Learning design']},
+ pof:{eyebrow:'04 / INTERNSHIP EXPOSURE',title:'POF Modernization',desc:'Internship exposure to enterprise document and workflow modernization, including Python/Django-related work and tools such as Alfresco, Docker and OnlyOffice.',tags:['Python','Django','Docker','Alfresco','OnlyOffice']}
+};
+const modal=$('#projectModal');
+$$('.project-open').forEach(btn=>btn.addEventListener('click',()=>{const p=projectData[btn.dataset.project];$('#modalEyebrow').textContent=p.eyebrow;$('#modalTitle').textContent=p.title;$('#modalDesc').textContent=p.desc;$('#modalTags').innerHTML=p.tags.map(t=>`<span>${t}</span>`).join('');modal.classList.add('show');$('#modalClose').focus()}));
+function closeModal(){modal.classList.remove('show')}
+$('#modalClose').addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+// Contact placeholder copy action — replace this with your real email before publishing.
+$('#copyEmail').addEventListener('click',async()=>{const value='itx.sadi234@gmail.com';try{await navigator.clipboard.writeText(value);$('#copyEmail').textContent='COPIED PLACEHOLDER ✓'}catch{$('#copyEmail').textContent=value}});
+</script>
+</body>
+</html>
